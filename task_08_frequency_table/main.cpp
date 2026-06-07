@@ -1,11 +1,31 @@
 
 #include <iostream>
 #include <vector>
+using namespace std;
+
 int main() {
-    std::ios::sync_with_stdio(false);
-    std::cin.tie(nullptr);
-    int n; 
-    if (!(std::cin >> n)) return 0;
-    // TODO: read n values in [0,100], count, and print only those with count>0 in ascending value
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    
+    int n;
+    if (!(cin >> n)) return 0;
+    
+    vector<int> freq(101, 0);
+    
+    for (int i = 0; i < n; i++) {
+        int value;
+        if (cin >> value) {
+            if (value >= 0 && value <= 100) {
+                freq[value]++;
+            }
+        }
+    }
+    
+    for (int i = 0; i <= 100; i++) {
+        if (freq[i] > 0) {
+            cout << i << " " << freq[i] << endl;
+        }
+    }
+    
     return 0;
 }
