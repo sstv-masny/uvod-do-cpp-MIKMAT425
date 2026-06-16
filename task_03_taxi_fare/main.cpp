@@ -2,11 +2,18 @@
 #include <iostream>
 #include <iomanip>
 #include <cmath>
+using namespace std;
 int main() {
-    std::ios::sync_with_stdio(false);
-    std::cin.tie(nullptr);
     long long k;
-    if (!(std::cin >> k)) return 0;
-    // TODO: compute the fare as specified and print with two decimals
+    if (!(cin >> k)) return 0;
+
+    double cena = 0.0;
+
+    if (k <= 2) {
+        cena = 4.0; 
+    } else {
+        cena = 4.0 + (k - 2) * 1.50; 
+    }
+    cout  << cena << endl;
     return 0;
 }
